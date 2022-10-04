@@ -23,6 +23,9 @@ app.get("/webhook", (req, res) => {
   res.status("200").json({
     status: "100",
     tokesn: mytoken,
+    dr: mode,
+    re: token,
+    red: challenge,
   });
   // if (mode && token) {
   //   if (mode === "subscribe" && token === mytoken) {
