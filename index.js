@@ -20,20 +20,22 @@ app.get("/webhook", (req, res) => {
   let mode = req.query["hub.mode"];
   let challange = req.query["hub.challenge"];
   let tokenx = req.query["hub.verify_token"];
-  res.status("200").json({
-    status: "100",
-    tokesn: mytoken,
-    dr: mode + "jj",
-    re: tokenx + "kjk",
-    red: challange + "kn",
-  });
-  // if (mode && token) {
-  //   if (mode === "subscribe" && token === mytoken) {
-  //     res.status(200).send(challange);
-  //   } else {
-  //     res.status(403);
-  //   }
-  // }
+  // res.status("200").json({
+  //   status: "100",
+  //   tokesn: mytoken,
+  //   dr: mode + "jj",
+  //   re: tokenx + "kjk",
+  //   red: challange + "kn",
+  // });
+  if (mode && tokenx) {
+    if (mode === "subscribe" && tokenx === mytoken) {
+      res.status(200).send(challange);
+    } else {
+      res.status(403);
+    }
+  } else {
+    res.status(403).send("ff");
+  }
 });
 
 app.post("/webhook", (req, res) => {
