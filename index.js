@@ -22,7 +22,7 @@ app.get("/webhook", (req, res) => {
   let token = req.query["hub.verify_token"];
   res.status("200").json({
     status: "100",
-    token: "token",
+    token: token,
   });
   // if (mode && token) {
   //   if (mode === "subscribe" && token === mytoken) {
