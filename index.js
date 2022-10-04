@@ -25,7 +25,7 @@ app.get("/webhook", (req, res) => {
     tokesn: mytoken,
     dr: mode,
     re: token,
-    red: challenge,
+    red: challange,
   });
   // if (mode && token) {
   //   if (mode === "subscribe" && token === mytoken) {
